@@ -29,33 +29,29 @@ bot.on('message', msg => {
     let args = msg.content.split(" ");
 
     if (args.length < 2 || args[1] == '-help') {
-      msg.reply('these are the roles you\'re allowed to join: \n'+
+      msg.reply('These are the roles you\'re allowed to join: \n'+
         allowedString +
-        '\nuse ".role `<role_name>` to join a role')
-      return
+        '\nuse ".role `<role_name>` to join a role');
     }
 
     // Get the role
     let role = msg.guild.roles.find("name", args[1].toLowerCase());
 
     // Checks for errors after args
-    if (role === null) {
-      msg.reply('Could not find a role by that name.')
-      return
+    if (!role || role === null) {
+      msg.reply('Could not find a role by that name.');
     }
 
     // Checks for errors after args
-    if (allowedRoles.indexOf(role.id) === -1) {
-      msg.reply('Doesn\'t look like you\'re allowed to join that group. \nFor a list of allowed roles type `.role -help`')
-      return
+    else if (allowedRoles.indexOf(role.name) === -1) {
+      msg.reply('Doesn\'t look like you\'re allowed to join that group. \nFor a list of allowed roles type `.role -help`');
     }
       
     msg.member.addRole(role);
-    msg.reply('You\'ve been added to: ' + role + ' Welcome to the army soldier!')
+    msg.reply('You\'ve been added to: ' + role.name + ' Welcome to the army soldier!');
 
-    return
     } else {
-        msg.reply("it looks like you don't have the right to do that");
+      msg.reply("it looks like you don't have the right to use that command");
     }
   }
 })
