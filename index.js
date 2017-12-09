@@ -29,7 +29,7 @@ bot.on('message', msg => {
     let args = msg.content.split(" ");
 
     if (args.length < 2 || args[1] == '-help') {
-      msg.member.sendMessage('These are the roles you\'re allowed to join: \n'+
+      msg.reply('these are the roles you\'re allowed to join: \n'+
         allowedString +
         '\nuse ".role `<role_name>` to join a role')
       return
@@ -39,19 +39,19 @@ bot.on('message', msg => {
     let role = msg.guild.roles.find("name", args[1].toLowerCase());
 
     // Checks for errors after args
-    if (!role || role === null) {
-      msg.r('Could not find a role by that name.')
+    if (role === null) {
+      msg.reply('Could not find a role by that name.')
       return
     }
 
     // Checks for errors after args
-    else if (allowedRoles.indexOf(role.name) === -1) {
+    if (allowedRoles.indexOf(role.id) === -1) {
       msg.reply('Doesn\'t look like you\'re allowed to join that group. \nFor a list of allowed roles type `.role -help`')
       return
     }
       
     msg.member.addRole(role);
-    msg.reply('You\'ve been added to: ' + role.name + ' Welcome to the army soldier!')
+    msg.reply('You\'ve been added to: ' + role + ' Welcome to the army soldier!')
 
     return
     } else {
