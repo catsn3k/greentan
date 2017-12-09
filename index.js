@@ -36,6 +36,7 @@ bot.on('message', msg => {
 
       // let value for roles from args
       let role = msg.guild.roles.find("name", args[1].toLowerCase());
+      
 
       // Checks for errors after args
       if (!role || role === null) {
@@ -47,15 +48,30 @@ bot.on('message', msg => {
       } else {
         return
       }
-
+      
+      let greenRole = msg.guild.roles.find("name", "Green");
+      let blueRole = msg.guild.roles.find("name", "Blue");
+      let newRole = msg.guild.roles.find("name", "Newfag");
+      
       msg.member.addRole(role);
       msg.reply('You\'ve been added to: ' + role.name + ' Welcome to the army soldier!');
+      msg.member.removeRole()
     } else if (msg.member.roles.some(r=>["Newfag", "Fag", "Mega Faggot"])) {
       msg.reply('you do not have the permission to use that command');
-    } else if (msg.member.roles.has()){
-      
-    }
+    } else if (msg.member.roles.has(greenRole.id)) {
+      if (role === "green" || "Green" || "GREEN") {
+        msg.reply('hey numbnuts you already have this role');
+      } else {
+        msg.reply("hey you can't just change teams like that, talk to the Owner if you want a change");
+      }
+    } else if (msg.member.roles.has(blueRole.id)) {
+      if (role === "blue" || "Blue" || "BLUE") {
+        msg.reply('hey numbnuts you already have this role');
+      } else {
+        msg.reply("hey you can't just change teams like that, talk to the Owner if you want a change");
+      }
   }
+}
 });
 
 bot.on("guildMemberAdd", member => {
