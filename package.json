@@ -3,23 +3,23 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
 
-  "name": "greentanbot",
+  "name": "greentan",
   "version": "0.0.1",
-  "description": "A dedicated role assigning bot for my Discord server",
-  "main": "index.js",
+  "description": "A dedicated role assigning Discord bot",
+  "main": "greentan.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node greentan.js"
   },
   "dependencies": {
     "express": "^4.16.2",
-    "dotenv": "^4.0.0",
-    "discord.js": "^11.2.1"
+    "discord.js": "^11.2.1",
+    "dotenv": "^4.0.0"
   },
   "engines": {
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/greentanbot"
+    "url": "https://glitch.com/edit/#!/greentan"
   },
   "license": "MIT",
   "keywords": [
