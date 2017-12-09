@@ -43,17 +43,19 @@ bot.on('message', msg => {
         
       } else if (allowedRoles.indexOf(role.name) === -1) {
         msg.reply('doesn\'t look like you\'re allowed to join that group. \nFor a list of allowed roles type `.role -help`');
+        
       } else {
         return
       }
 
       msg.member.addRole(role);
       msg.reply('You\'ve been added to: ' + role.name + ' Welcome to the army soldier!');
-
-      } else {
-        msg.reply("it looks like you don't have the right to use that command");
-      }
+    } else if (msg.member.roles.some(r=>["Newfag", "Fag", "Mega Faggot"])) {
+      msg.reply('you do not have the permission to use that command');
+    } else if (msg.member.roles.has()){
+      
     }
+  }
 });
 
 bot.on("guildMemberAdd", member => {
@@ -67,4 +69,4 @@ bot.on('ready', () => {
 
 bot.on('error', e => { console.error(e) })
 
-bot.login(botToken)
+bot.login(botToken);
