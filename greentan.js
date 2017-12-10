@@ -36,7 +36,7 @@ bot.on('message', msg => {
         if (msg.member.roles.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
             msg.member.addRole(greenRole)
             console.log('Someone is now part of the Green team!')
-            msg.reply('you are now part of the Green team!  Welcome aboard soldier! :kkonagreen:')
+            msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>')
             
             // Removes the Newfag role if they currently have it
             if (msg.member.roles.has(newRole.id)) {
@@ -48,7 +48,7 @@ bot.on('message', msg => {
 
         // When the member has the Green role already
         } else if (msg.member.roles.has(greenRole.id)) {
-            msg.reply("hey numbnuts, you're already part of the Green team :greendab:")
+            msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>")
         
         // When the member has the Blue role already
         } else if (msg.member.roles.has(blueRole.id)) {
