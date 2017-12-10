@@ -71,6 +71,11 @@ bot.on('message', msg => {
     }
 });
 
+bot.on('guildMemberAdd', (member) => {
+    newUsers.addRole(newRole)
+    console.log('A new user has joined your Discord server!  \o/')
+});
+
 // Keeps the bot from shutting down
 const http = require('http');
 const express = require('express');
