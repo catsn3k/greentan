@@ -72,6 +72,9 @@ bot.on('message', msg => {
 });
 
 bot.on('guildMemberAdd', (member) => {
+  const newUsers = new Discord.Collection6()
+  const newRole = message.server.roles.get("name", "Newfag")
+  
     newUsers.addRole(newRole)
     console.log('A new user has joined your Discord server!  \o/')
 });
