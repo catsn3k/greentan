@@ -58,7 +58,7 @@ bot.on('message', msg => {
         
         // When the member has no role
         } else {
-            msg.reply("it seems you can't use this command, try asking the Owner about it")
+            msg.reply("it seems you can't use this command, try asking the Owner about the issue")
             return
         
         }
@@ -79,7 +79,7 @@ bot.on('guildMemberAdd', (member) => {
   const role = member.guild.roles.find("name", "Newfag")
   
   member.addRole(role)
-  console.log(`A new user has joined your Discord server! \o/`)
+  console.log(` A new user has joined your Discord server! \o/ `)
 });
 
 // Keeps the bot from shutting down
