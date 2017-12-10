@@ -9,8 +9,8 @@ let botToken = process.env.BOT_TOKEN
 // Bot startup
 bot.on('ready', () => {
   
-    bot.user.setGame('Ace of Spades')
-    console.log('Time to kill some greenies!')
+  bot.user.setGame('Ace of Spades')
+  console.log('Time to kill some greenies!')
 });
 
 // Prefix for commands
@@ -71,12 +71,13 @@ bot.on('message', msg => {
     }
 });
 
+// Adds new members to the Newfag role
 bot.on('guildMemberAdd', (member) => {
-  const newUsers = new Discord.Collection()
-  const newRole = Discord.roles.get("name", "Newfag")
+
+  const role = member.guild.roles.find("name", "Newfag")
   
-    newUsers.addRole(newRole)
-    console.log('A new user has joined your Discord server!  \o/')
+  member.addRole(role)
+  console.log(`A new user has joined your Discord server! \o/`)
 });
 
 // Keeps the bot from shutting down
