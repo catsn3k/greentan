@@ -39,6 +39,13 @@ bot.on('message', msg => {
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>')
           msg.delete(100)
           
+          // Channel id for #self-assign
+          if (msg.channel.id --- "357704226673262593") {
+            if (msg.content.startsWith('@')) {
+              msg.de
+            }
+          }
+          
             // Removes the Newfag role if they currently have it
             if (msg.member.roles.has(newRole.id)) {
               msg.member.removeRole(newRole)
