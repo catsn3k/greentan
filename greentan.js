@@ -37,7 +37,6 @@ bot.on('message', msg => {
           msg.member.addRole(greenRole)
           console.log('Someone is now part of the Green team!')
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>')
-          msg.delete(100)
           
             // Removes the Newfag role if they currently have it
             if (msg.member.roles.has(newRole.id)) {
