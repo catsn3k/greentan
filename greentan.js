@@ -9,8 +9,8 @@ let botToken = process.env.BOT_TOKEN
 // Bot startup
 bot.on('ready', () => {
   
-  bot.user.setGame('Ace of Spades')
-  console.log('Time to kill some greenies!')
+  bot.user.setGame('Tunnel Rat Hunter')
+  console.log('Time to kill some tunnel rats!')
 });
 
 // Prefix for commands
