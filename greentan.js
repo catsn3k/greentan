@@ -59,13 +59,12 @@ bot.on('message', msg => {
         } else {
             msg.reply("it seems you can't use this command, try asking the Owner about the issue")
             return
-        
         }
 
     // Ignore commands // Let bluetan handle these
-    } else if (command === "purge") {
-        return
     } else if (command === "blue") {
+        return
+    } else if (command === "purge") {
         return
     } else {
         return
