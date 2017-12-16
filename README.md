@@ -5,7 +5,7 @@ Description:
 
 Green team rocks!
 --------------------------
-`greentan` is a dedicated Discord bot that self assigns roles in the #self-assign chat in the Ace of Spades Discord, `greentan` is always evolving and hopefully she will turn more into a general use bot than just a, "self assign bot."
+`greentan` is a dedicated Discord bot that self assigns roles in the `#self-assign` chat in the Ace of Spades Discord, `greentan` is always evolving and hopefully she will turn more into a general use bot than just a, "self assign bot."
 
 Usability:
 --------------------------
