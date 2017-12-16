@@ -10,14 +10,15 @@ Green team rocks!
 
 Usability:
 --------------------------
-`.green`  ==  Adds user to the role, "Green" => If the user has the Newfag role, it is quickly removed as the user will no longer have access to the #self-assign chat
+`.green`  ==  Adds user to the role => Green
 
 Background:
 --------------------------
 
 `greentan` does more than just self assigning roles, she actually adds the, "Newfag" role to new members
 
-Members with this role will have access to the #self-assign chat and will have the choice between two roles == Green or Blue
+Members with this role will have access to the #self-assign chat and will have the choice between two roles: Green or Blue
 
 
+-Rockmaster
 
