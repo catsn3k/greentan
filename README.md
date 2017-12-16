@@ -1,5 +1,4 @@
-greentan Discord bot
-==========================
+# greentan Discord bot
 
 Description:
 --------------------------
@@ -20,5 +19,10 @@ Background:
 Members with this role will have access to the #self-assign chat and will have the choice between two roles: Green or Blue
 
 
--Rockmaster
+Ace of Spades Discord
+--------------------------
 
+[Discord](https://discord.gg/EMMmZJU)
+
+
+-Rockmaster
