@@ -16,7 +16,7 @@ Background:
 
 `greentan` does more than just self assigning roles, she actually adds the, "Newfag" role to new members
 
-Members with this role will have access to the `#self-assign` chat and will have the choice between two roles: Green or Blue
+Members with this role have access to the `#self-assign` chat and will have the choice between two roles: Green or Blue
 
 [Link to Discord](https://discord.gg/EMMmZJU)
 
