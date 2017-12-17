@@ -1,4 +1,4 @@
-# **greentan** Discord bot
+# greentan Discord bot
 
 Description:
 =========================
