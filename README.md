@@ -10,6 +10,7 @@ Green team rocks!
 Usability:
 --------------------------
 `.green`  ==  Adds user to the role => Green
+
 `.meme` == Chooses a random Green team meme
 
 Background:
