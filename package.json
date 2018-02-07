@@ -1,5 +1,4 @@
 {
-
   "name": "greentan",
   "version": "0.0.1",
   "description": "A dedicated role assigning Discord bot",
@@ -9,8 +8,8 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "discord.js": "^11.2.1",
-    "dotenv": "^4.0.0"
+    "discord.js": "^11.3.0",
+    "dotenv": "^5.0.0"
   },
   "engines": {
     "node": "8.x"
