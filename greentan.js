@@ -97,15 +97,6 @@ bot.on('message', msg => {
     }
 });
 
-// Adds new members to the Newfag role
-bot.on('guildMemberAdd', (member) => {
-
-  const role = member.guild.roles.find("name", "Newfag")
-  
-  member.addRole(role)
-  console.log(' A new user has joined your Discord server! \o/ ')
-});
-
 // Keeps the bot from shutting down
 const http = require('http');
 const express = require('express');

@@ -19,9 +19,10 @@ Usability:
 Background:
 --------------------------
 ----------------------------------------------------------------------
-`greentan` does more than just self assigning roles, she actually adds the, "Newfag" role to new members
 
 Members with this role have access to the `#self-assign` chat and will have the choice between two roles: Green or Blue
+
+However, if the member wants to change their team bias, they will need to contact the owner via **PM or @ mentioning**
 
 [Link to Discord](https://discord.gg/EMMmZJU)
 
