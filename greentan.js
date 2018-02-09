@@ -9,7 +9,7 @@ let botToken = process.env.BOT_TOKEN
 // Bot startup
 bot.on('ready', () => {
   
-  bot.user.setGame('Blue Tower Defense')
+  bot.user.setActivity('Blue Tower Defense')
   console.log('Time to kill some tunnel rats!')
 });
 
