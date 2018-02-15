@@ -1,36 +1,36 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client()
-const dotenv = require('dotenv')
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+const dotenv = require('dotenv');
 
-dotenv.load()
+dotenv.load();
 
-let botToken = process.env.BOT_TOKEN
+let botToken = process.env.BOT_TOKEN;
 
 // Bot startup
 bot.on('ready', () => {
   
-  bot.user.setActivity('Blue Tower Defense')
-  console.log('Time to kill some tunnel rats!')
+  bot.user.setActivity('Blue Tower Defense');
+  console.log('Time to kill some tunnel rats!');
 });
 
 // Prefix for commands
-const prefix = "."
+const prefix = ".";
 
 // Defaults message => msg
 bot.on('message', msg => {
     
     // Keeps bot from spamming itself
-    if (msg.author.bot) return
-    if (!msg.content.startsWith(prefix)) return
+    if (msg.author.bot) return;
+    if (!msg.content.startsWith(prefix)) return;
 
-    let command = msg.content.split(" ")[0]
-    command = command.slice(prefix.length)
+    const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
   
     // Command for posting random greentan memes
     if (command === "meme") {
+      if (msg.member.roles.some(r=>["Green"].includes(r.name)) ) {
       // 20 memes
       const greenMemes = [
-        
           'https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512302280667.png?1517966183605', 
           'https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512318889692.png?1517966183617',
           'https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1485918568651.png?1517966183654',
@@ -58,43 +58,40 @@ bot.on('message', msg => {
         url : randMeme
         }
       }});
-}
+    } return;
+  }
 
     // Command that sets up the Green role
     if (command === "green") {
-        const blueRole = msg.guild.roles.find("name", "Blue")
-        const newRole = msg.guild.roles.find("name", "Newfag")
-        const greenRole = msg.guild.roles.find("name", "Green")
+      if (msg.channel.id === '390334884390109195') {
+        const blueRole = msg.guild.roles.find("name", "Blue");
+        const newRole = msg.guild.roles.find("name", "Newfag");
+        const greenRole = msg.guild.roles.find("name", "Green");
 
         // Checks for insufficient permission
         if (msg.member.roles.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
-          msg.member.addRole(greenRole)
-          console.log('Someone is now part of the Green team!')
-          msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>')
+          msg.member.addRole(greenRole);
+          console.log('Someone is now part of the Green team!');
+          msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
 
         // When the member has the Green role already
         } else if (msg.member.roles.has(greenRole.id)) {
-            msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>")
+            msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
         
         // When the member has the Blue role already
         } else if (msg.member.roles.has(blueRole.id)) {
-            msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first")
+            msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
         
         // When the member has no role
         } else {
-            msg.reply("it seems you can't use this command, try asking the Owner about the issue")
-            return
+            msg.reply("it seems you can't use this command, try asking the Owner about the issue");
+            return;
         }
 
     // Ignore commands // Let bluetan handle these
-    } else if (command === "blue") {
-        return
-    } else if (command === "purge") {
-        return
-    } else {
-        return
-    }
+    } return;
+  } return;
 });
 
 // Keeps the bot from shutting down
