@@ -110,3 +110,7 @@ setInterval(() => {
 // Bot token
 // Located in .env
 bot.login(botToken);
+
+
+
+// Is this bot still in service?
