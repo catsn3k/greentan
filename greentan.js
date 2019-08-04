@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dotenv = require('dotenv');
 
-dotenv.load();
+dotenv.config();
 
 let botToken = process.env.BOT_TOKEN;
 
@@ -63,11 +63,11 @@ bot.on('message', msg => {
 
     // Command that sets up the Green role
     if (command === "green") {
-      if (msg.channel.id === '390334884390109195') {
-        const blueRole = msg.guild.roles.find("name", "Blue");
-        const newRole = msg.guild.roles.find("name", "Newfag");
-        const greenRole = msg.guild.roles.find("name", "Green");
+      const blueRole = msg.guild.roles.find("name", "Blue");
+      const newRole = msg.guild.roles.find("name", "Newfag");
+      const greenRole = msg.guild.roles.find("name", "Green");
 
+      if (msg.channel.id === '390334884390109195') {
         // Checks for insufficient permission
         if (msg.member.roles.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
           msg.member.addRole(greenRole);
@@ -88,9 +88,11 @@ bot.on('message', msg => {
             msg.reply("it seems you can't use this command, try asking the Owner about the issue");
             return;
         }
-
-    // Ignore commands // Let bluetan handle these
-    } return;
+    // #bot-testing
+    } else if (msg.channel.id === "390758129274454018") {
+      const godRole = msg.member.roles.some(r=>["Owner", "Admin", "Mod"].includes(r.name));
+      msg.member.addRole(greenRole);                                     
+    }
   } return;
 });
 
@@ -110,7 +112,5 @@ setInterval(() => {
 // Bot token
 // Located in .env
 bot.login(botToken);
-
-
 
 // Is this bot still in service?
