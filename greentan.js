@@ -89,11 +89,8 @@ bot.on('message', msg => {
             return;
         }
     // #bot-testing
-    } else if (msg.channel.id === "390758129274454018") {
-      const godRole = msg.member.roles.some(r=>["Owner", "Admin", "Mod"].includes(r.name));
-      msg.member.addRole(greenRole);                                     
-    }
-  } return;
+    } return;
+  };
 });
 
 // Keeps the bot from shutting down
