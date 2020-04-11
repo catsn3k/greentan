@@ -69,9 +69,9 @@ bot.on("message", msg => {
 
   // Command that sets up the Green role
   if (command === "green") {
-    const blueRole = msg.guild.roles.find("name", "Blue");
-    const newRole = msg.guild.roles.find("name", "Newfag");
-    const greenRole = msg.guild.roles.find("name", "Green");
+    const blueRole = msg.guild.roles.cache.find("name", "Blue");
+    const newRole = msg.guild.roles.cache.find("name", "Newfag");
+    const greenRole = msg.guild.roles.cache.find("name", "Green");
 
     if (msg.channel.id === "390334884390109195") {
       // Checks for insufficient permission
