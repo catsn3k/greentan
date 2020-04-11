@@ -88,7 +88,7 @@ bot.on("message", msg => {
           ].includes(r.name)
         )
       ) {
-        msg.member.addRole(greenRole);
+        msg.member.roles.add(greenRole);
         console.log("Someone is now part of the Green team!");
         msg.reply(
           "you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>"
