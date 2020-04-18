@@ -29,7 +29,7 @@ bot.on("message", msg => {
 
   // Command for posting random greentan memes
   if (command === "meme") {
-    if (msg.member.roles.some(r => ["Green"].includes(r.name))) {
+    if (msg.member.roles.cache.some(r => ["Green"].includes(r.name))) {
       // 20 memes
       const greenMemes = [
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512302280667.png?1517966183605",
@@ -76,7 +76,7 @@ bot.on("message", msg => {
     if (msg.channel.id === "390334884390109195") {
       // Checks for insufficient permission
       if (
-        msg.member.roles.some(r =>
+        msg.member.roles.cache.some(r =>
           [
             "Owner",
             "Admin",
