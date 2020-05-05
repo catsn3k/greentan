@@ -108,8 +108,9 @@ bot.on("message", msg => {
 
         // When the member has no role
       } else {
+        msg.member.roles.add(newRole);
         msg.reply(
-          "it seems you can't use this command, try asking the Owner about the issue"
+          "it seems you did not have the Newfag role, here I'll give you one"
         );
         return;
       }
