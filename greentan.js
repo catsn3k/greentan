@@ -63,7 +63,11 @@ bot.on("message", msg => {
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1506743753835.jpg?v=1589563044976",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1506749710219.png?v=1589563086492",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1506750701261.png?v=1589563104934",
-        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512344092820.png?v=1589563200619"
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512344092820.png?v=1589563200619",
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589399417027.png?v=1589853851273",
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589381978193.png?v=1589853851288",
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589384888011.png?v=1589853851531",
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589382283043.jpg?v=1589853851788"
       ];
 
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
