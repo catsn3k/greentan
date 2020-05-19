@@ -6,31 +6,7 @@ dotenv.config();
 
 let botToken = process.env.BOT_TOKEN;
 
-// Bot startup
-bot.on("ready", () => {
-  bot.user.setActivity("Blue Tower Defense");
-  console.log("Time to kill some tunnel rats!");
-});
-
-// Prefix for commands
-const prefix = ".";
-
-// Defaults message => msg
-bot.on("message", msg => {
-  // Keeps bot from spamming itself
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-
-  const args = msg.content
-    .slice(prefix.length)
-    .trim()
-    .split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  // Command for posting random greentan memes
-  if (command === "meme") {
-    if (msg.member.roles.cache.some(r => ["Green"].includes(r.name))) {
-      const greenMemes = [
+const greenMemes = [
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512302280667.png?1517966183605",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512318889692.png?1517966183617",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1485918568651.png?1517966183654",
@@ -70,7 +46,30 @@ bot.on("message", msg => {
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589382283043.jpg?v=1589853851788",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589862956269.png?v=1589863047050"
       ];
+// Bot startup
+bot.on("ready", () => {
+  bot.user.setActivity("Blue Tower Defense");
+  console.log("Time to kill some tunnel rats!");
+});
 
+// Prefix for commands
+const prefix = ".";
+
+// Defaults message => msg
+bot.on("message", msg => {
+  // Keeps bot from spamming itself
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+
+  const args = msg.content
+    .slice(prefix.length)
+    .trim()
+    .split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  // Command for posting random greentan memes
+  if (command === "meme") {
+    if (msg.member.roles.cache.some(r => ["Green"].includes(r.name))) {
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
       msg.channel.send({
         embed: {
@@ -133,7 +132,18 @@ bot.on("message", msg => {
       // #bot-testing
     }
     return;
-  }
+  };
+  
+  if (command === "list") {
+    let listVals = greenMemes.length
+    msg.reply(
+      "There is a total of " +
+        "`" +
+        listVals +
+        "`" +
+        " memes relating to greens"
+    );
+  };
 });
 
 // Keeps the bot from shutting down
