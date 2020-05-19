@@ -82,12 +82,13 @@ bot.on("message", msg => {
     return;
   }
 
+  const blueRole = msg.guild.roles.cache.find(roles => roles.name === "Blue");
+  const newRole = msg.guild.roles.cache.find(roles => roles.name === "Newfag");
+  const greenRole = msg.guild.roles.cache.find(roles => roles.name === "Green");
+  let listVals = greenMemes.length;
+  
   // Command that sets up the Green role
   if (command === "green") {
-    const blueRole = msg.guild.roles.cache.find(roles => roles.name === "Blue");
-    const newRole = msg.guild.roles.cache.find(roles => roles.name === "Newfag");
-    const greenRole = msg.guild.roles.cache.find(roles => roles.name === "Green");
-
     if (msg.channel.id === "390334884390109195") {
       // Checks for insufficient permission
       if (
@@ -135,14 +136,18 @@ bot.on("message", msg => {
   };
   
   if (command === "list") {
-    let listVals = greenMemes.length
-    msg.reply(
+    } else if (msg.member.roles.has(greenRole.id)) {
+        msg.author.send(
       "There is a total of " +
         "`" +
         listVals +
         "`" +
         " memes relating to greens"
     );
+
+        // When the member has the Green role already
+      } else if (msg.member.roles.has(blueRole.id)) {
+       return;
   };
 });
 
