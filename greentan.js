@@ -67,7 +67,8 @@ bot.on("message", msg => {
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589399417027.png?v=1589853851273",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589381978193.png?v=1589853851288",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589384888011.png?v=1589853851531",
-        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589382283043.jpg?v=1589853851788"
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589382283043.jpg?v=1589853851788",
+        "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1589862956269.png?v=1589863047050"
       ];
 
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
