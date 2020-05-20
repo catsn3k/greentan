@@ -68,13 +68,7 @@ bot.on("message", msg => {
     .trim()
     .split(/ +/g);
   const command = args.shift().toLowerCase();
-  
-  const member = msg.mentions.members.first();
-  const blueRole = msg.guild.roles.cache.find(roles => roles.name === "Blue");
-  const newRole = msg.guild.roles.cache.find(roles => roles.name === "Newfag");
-  const greenRole = msg.guild.roles.cache.find(roles => roles.name === "Green");
-  let listVals = greenMemes.length;
-  
+
   // Command for posting random greentan memes
   if (command === "meme") {
     if (msg.member.roles.cache.some(role => role.name === ("Green"))) {
@@ -89,13 +83,18 @@ bot.on("message", msg => {
     }
     return;
   }
+
+  const blueRole = msg.guild.roles.cache.find(roles => roles.name === "Blue");
+  const newRole = msg.guild.roles.cache.find(roles => roles.name === "Newfag");
+  const greenRole = msg.guild.roles.cache.find(roles => roles.name === "Green");
+  let listVals = greenMemes.length;
   
   // Command that sets up the Green role
   if (command === "green") {
     if (msg.channel.id === "712500246931963915") {
       // Checks for insufficient permission
       if (
-        member.roles.cache.some(role => role.name ===
+        msg.member.roles.cache.some(role => role.name ===
           [
             "Owner",
             "Admin",
@@ -107,7 +106,7 @@ bot.on("message", msg => {
           ]
         )
       ) {
-        member.roles.add(greenRole);
+        msg.member.roles.add(greenRole);
         console.log("Someone is now part of the Green team!");
         msg.reply(
           "you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>"
@@ -118,15 +117,13 @@ bot.on("message", msg => {
         msg.reply(
           "hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>"
         );
-        msg.delete({timeout: 5000});
 
         // When the member has the Blue role already
-      } else if (member.roles.has(role => role.name === 'Blue' || blueRole)) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole)) {
         msg.reply(
           "listen man, I wish you can be on our team, but you have to let the Owner know first"
         );
-        msg.delete({timeout: 5000});
-        
+
         // When the member has no role
       } else {
         msg.member.roles.add(newRole);
@@ -141,7 +138,7 @@ bot.on("message", msg => {
   };
   
   if (command === "list") {
-    } else if (member.roles.has(role => role.name === 'Green' || greenRole)) {
+    } else if (msg.member.roles.has(role => role.name === 'Green' || greenRole)) {
         msg.author.send(
       "There is a total of " +
         "`" +
@@ -151,7 +148,7 @@ bot.on("message", msg => {
     );
 
         // When the member has the Green role already
-      } else if (member.roles.has(role => role.name === 'Blue' || blueRole)) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole)) {
        return;
   };
 });
