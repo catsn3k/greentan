@@ -26,6 +26,7 @@ bot.on("message", msg => {
     .trim()
     .split(/ +/g);
   const command = args.shift().toLowerCase();
+  
   const greenMemes = [
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512302280667.png?1517966183605",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512318889692.png?1517966183617",
