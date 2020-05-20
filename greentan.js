@@ -113,13 +113,13 @@ bot.on("message", msg => {
         );
 
         // When the member has the Green role already
-      } else if (msg.member.roles.has(greenRole.id)) {
+      } else if (msg.member.roles.has(role => role.name === 'Green' || greenRole)) {
         msg.reply(
           "hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>"
         );
 
         // When the member has the Blue role already
-      } else if (msg.member.roles.has(blueRole.id)) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole)) {
         msg.reply(
           "listen man, I wish you can be on our team, but you have to let the Owner know first"
         );
@@ -138,7 +138,7 @@ bot.on("message", msg => {
   };
   
   if (command === "list") {
-    } else if (msg.member.roles.has(role => role.name === 'Green')) {
+    } else if (msg.member.roles.has(role => role.name === 'Green' || greenRole.id)) {
         msg.author.send(
       "There is a total of " +
         "`" +
@@ -148,7 +148,7 @@ bot.on("message", msg => {
     );
 
         // When the member has the Green role already
-      } else if (msg.member.roles.has(role => role.name === 'Blue')) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole.id)) {
        return;
   };
 });
