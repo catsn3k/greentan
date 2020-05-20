@@ -71,7 +71,7 @@ bot.on("message", msg => {
 
   // Command for posting random greentan memes
   if (command === "meme") {
-    if (msg.member.roles.cache.some(r => ["Green"].includes(r.name))) {
+    if (msg.member.roles.cache.some(role => role.name === ("Green"))) {
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
       msg.channel.send({
         embed: {
