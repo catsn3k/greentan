@@ -138,7 +138,7 @@ bot.on("message", msg => {
   };
   
   if (command === "list") {
-    } else if (msg.member.roles.has(greenRole.id)) {
+    } else if (msg.member.roles.has(role => role.name === 'Green')) {
         msg.author.send(
       "There is a total of " +
         "`" +
@@ -148,7 +148,7 @@ bot.on("message", msg => {
     );
 
         // When the member has the Green role already
-      } else if (msg.member.roles.has(blueRole.id)) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue')) {
        return;
   };
 });
