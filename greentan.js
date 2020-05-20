@@ -94,7 +94,7 @@ bot.on("message", msg => {
     if (msg.channel.id === "712500246931963915") {
       // Checks for insufficient permission
       if (
-        msg.member.roles.cache.some(r =>
+        msg.member.roles.cache.some(role => role.name ===
           [
             "Owner",
             "Admin",
@@ -103,7 +103,7 @@ bot.on("message", msg => {
             "Server Host",
             "Oldfag",
             "Newfag"
-          ].includes(r.name)
+          ]
         )
       ) {
         msg.member.roles.add(greenRole);
@@ -138,7 +138,7 @@ bot.on("message", msg => {
   };
   
   if (command === "list") {
-    } else if (msg.member.roles.has(role => role.name === 'Green' || greenRole.id)) {
+    } else if (msg.member.roles.has(role => role.name === 'Green' || greenRole)) {
         msg.author.send(
       "There is a total of " +
         "`" +
@@ -148,7 +148,7 @@ bot.on("message", msg => {
     );
 
         // When the member has the Green role already
-      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole.id)) {
+      } else if (msg.member.roles.has(role => role.name === 'Blue' || blueRole)) {
        return;
   };
 });
