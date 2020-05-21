@@ -69,8 +69,8 @@ bot.on('message', msg => {
     const blueRole = msg.guild.roles.cache.find(r=> r.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(r=> r.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(r=> r.name === 'Green');
-    let member = msg.mentions.first();
-    let selfChannel = bot.channels.cache.get('712502613022605322' && '390758129274454018');
+    let member = msg.mentions.members.first();
+    let selfChannel = bot.channels.cache.get('712502613022605322' || '390758129274454018');
   
     // Command for posting random greentan memes
     if (command === "meme") {
@@ -90,17 +90,17 @@ bot.on('message', msg => {
       if (msg.channel.id === selfChannel) {
         // Checks for insufficient permission
         if (msg.member.roles.cache.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
-          msg.member.add(greenRole);
+          member.add(greenRole);
           console.log('Someone is now part of the Green team!');
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
 
         // When the member has the Green role already
-        } else if (msg.guild.roles.has(greenRole)) {
+        } else if (msg.guild.roles.cache.has(greenRole)) {
             msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
         
         // When the member has the Blue role already
-        } else if (msg.guild.roles.has(blueRole)) {
+        } else if (msg.guild.roles.cache.has(blueRole)) {
             msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
         
         // When the member has no role
