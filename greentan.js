@@ -88,7 +88,7 @@ bot.on('message', msg => {
         // Checks for insufficient permission
         if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
           let member = msg.member;
-          msg.member.roles.add(greenRole).catch(console.error);
+          member.roles.add(greenRole).catch(console.error);
           console.log('Someone is now part of the Green team!');
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
