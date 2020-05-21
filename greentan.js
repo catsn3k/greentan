@@ -28,7 +28,7 @@ bot.on('message', msg => {
   
     // Command for posting random greentan memes
     if (command === "meme") {
-      if (msg.member.roles.some(role => role.name === ('Green') ) {
+      if (msg.member.roles.some(role => role.name === 'Green')) {
 
       const greenMemes = [
           'https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512302280667.png?1517966183605', 
@@ -59,7 +59,7 @@ bot.on('message', msg => {
         }
       }});
     } return;
-  }
+  };
 
     // Command that sets up the Green role
     if (command === "green") {
