@@ -69,7 +69,6 @@ bot.on('message', msg => {
     // Command for posting random greentan memes
     if (command === "meme") {
       if (msg.guild.roles.cache.some(role => role.name === 'Green')) {
-
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
       msg.channel.send({embed: {
         image: {
@@ -88,8 +87,8 @@ bot.on('message', msg => {
       if (msg.channel.id === '712502613022605322' || '390758129274454018') {
         // Checks for insufficient permission
         if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
-          let member = msg.mentions.members.first();
-          member.roles.add(greenRole);
+          let member = msg.member;
+          member.roles.add(greenRole).catch(`console.error`);
           console.log('Someone is now part of the Green team!');
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
