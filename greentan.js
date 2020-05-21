@@ -23,12 +23,8 @@ bot.on('message', msg => {
 
     const args = msg.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
-  
-    // Command for posting random greentan memes
-    if (command === "meme") {
-      if (msg.member.roles.cache.some(role => role.name === 'Green')) {
-
-      const greenMemes = [
+    
+    const greenMemes = [
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1506745783365.jpg?v=1590025764220",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1588997855560.gif?v=1590025764499",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1512301223711.png?v=1590025764678",
@@ -69,6 +65,16 @@ bot.on('message', msg => {
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2F1588996681691.png?v=1590025775879",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2Fconstantinople.png?v=1590025776027",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2FEEEH_SMG.png?v=1590025778893"];
+  
+    const blueRole = msg.guild.roles.cache.find(r=> r.name === 'Blue');
+    const newRole = msg.guild.roles.cache.find(r=> r.name === 'Newfag');
+    const greenRole = msg.guild.roles.cache.find(r=> r.name === 'Green');
+    let member = msg.mentions.first();
+    let selfChannel = bot.channels.cache.get('712502613022605322' && '390758129274454018');
+  
+    // Command for posting random greentan memes
+    if (command === "meme") {
+      if (msg.guild.roles.cache.some(role => role.name === 'Green')) {
 
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
       msg.channel.send({embed: {
@@ -81,11 +87,7 @@ bot.on('message', msg => {
 
     // Command that sets up the Green role
     if (command === "green") {
-      const blueRole = msg.guild.roles.cache.find(r=> r.name === 'Blue');
-      const newRole = msg.guild.roles.cache.find(r=> r.name === 'Newfag');
-      const greenRole = msg.guild.roles.cache.find(r=> r.name === 'Green');
-
-      if (msg.channel.id === '390334884390109195') {
+      if (msg.channel.id === selfChannel) {
         // Checks for insufficient permission
         if (msg.member.roles.cache.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
           msg.member.add(greenRole);
@@ -94,11 +96,11 @@ bot.on('message', msg => {
           
 
         // When the member has the Green role already
-        } else if (msg.member.roles.has(greenRole)) {
+        } else if (msg.guild.roles.has(greenRole)) {
             msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
         
         // When the member has the Blue role already
-        } else if (msg.member.roles.has(blueRole)) {
+        } else if (msg.guild.roles.has(blueRole)) {
             msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
         
         // When the member has no role
