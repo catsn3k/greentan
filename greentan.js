@@ -66,12 +66,6 @@ bot.on('message', msg => {
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2Fconstantinople.png?v=1590025776027",
         "https://cdn.glitch.com/47637b22-ee5d-45dd-a2e3-7c043f29a51b%2FEEEH_SMG.png?v=1590025778893"];
   
-    const blueRole = msg.guild.roles.cache.find(r=> r.name === 'Blue');
-    const newRole = msg.guild.roles.cache.find(r=> r.name === 'Newfag');
-    const greenRole = msg.guild.roles.cache.find(r=> r.name === 'Green');
-    let member = msg.mentions.members.first();
-    let selfChannel = bot.channels.cache.get('712502613022605322' || '390758129274454018');
-  
     // Command for posting random greentan memes
     if (command === "meme") {
       if (msg.guild.roles.cache.some(role => role.name === 'Green')) {
@@ -85,16 +79,21 @@ bot.on('message', msg => {
     } return;
   };
 
+    const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
+    const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
+    const greenRole = msg.guild.roles.cache.find(role => r.name === 'Green');
+    let member = msg.mentions.members.first();
+    let selfChannel = bot.channels.cache.get('712502613022605322' || '390758129274454018');
+  
     // Command that sets up the Green role
     if (command === "green") {
-      if (msg.channel.id === selfChannel) {
+      if (msg.channel.id === '712502613022605322' || '390758129274454018') {
         // Checks for insufficient permission
-        if (msg.member.roles.cache.some(r=>["Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag"].includes(r.name)) ) {
+        if (msg.member.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
           member.add(greenRole);
           console.log('Someone is now part of the Green team!');
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
-
         // When the member has the Green role already
         } else if (msg.guild.roles.cache.has(greenRole)) {
             msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
