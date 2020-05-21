@@ -81,16 +81,15 @@ bot.on('message', msg => {
 
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
-    const greenRole = msg.guild.roles.cache.find(role => r.name === 'Green');
-    let member = msg.mentions.members.first();
-    let selfChannel = bot.channels.cache.get('712502613022605322' || '390758129274454018');
+    const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
   
     // Command that sets up the Green role
     if (command === "green") {
       if (msg.channel.id === '712502613022605322' || '390758129274454018') {
         // Checks for insufficient permission
-        if (msg.member.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
-          member.add(greenRole);
+        if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
+          let member = msg.mentions.members.first();
+          member.roles.add(greenRole);
           console.log('Someone is now part of the Green team!');
           msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
           
