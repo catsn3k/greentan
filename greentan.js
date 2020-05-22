@@ -88,26 +88,25 @@ bot.on('message', (msg) => {
         if (msg.channel.id === '712502613022605322' || '390758129274454018') {
           // Checks for insufficient permission
           if (msg.member.roles.cache.some(role => role.name === "Newfag", "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag")) {
+            msg.delete({timeout: 5000});
             msg.member.roles.add(greenRole).catch(console.error);
             msg.member.roles.remove(newRole).catch(console.error);
             console.log('Someone is now part of the Green team!');
             msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
-            msg.delete({timeout: 3000});
-            msg.delete({timeout: 3000});
 
           // When the member has the Green role already
           } else if (msg.guild.roles.cache.has(greenRole)) {
+              msg.delete({timeout: 5000});
               msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
-              msg.delete({timeout: 3000});
             
           // When the member has the Blue role already
           } else if (msg.guild.roles.cache.has(blueRole)) {
+              msg.delete({timeout: 5000});
               msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
-              msg.delete({timeout: 3000});
           // When the member has no role
           } else {
+              msg.delete({timeout: 5000});
               msg.reply("it seems you can't use this command, try asking the Owner about the issue");
-              msg.delete({timeout: 3000});
               return;
           }
       // #bot-testing
