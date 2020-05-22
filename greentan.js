@@ -17,7 +17,7 @@ bot.on('ready', () => {
 const prefix = ".";
 
 // Defaults message => msg
-bot.on('message', msg => {
+bot.on('guildMemberAdd', (member) => 'message', (msg) => {
     
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
@@ -79,17 +79,16 @@ bot.on('message', msg => {
   };
 
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
-    const blueTan = msg.guild.roles.cache.find(role => role.name === 'bluetan');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
-    let member = msg.mentions.member.first();
+    const selfChannel = member.
   
     // Command that sets up the Green role
     if (command === "green") {
         if (msg.channel.id === '712502613022605322' || '390758129274454018') {
           // Checks for insufficient permission
-          if (msg.member.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
-            member.roles.add(greenRole).catch(console.error);
+          if (msg.member.roles.cache.some(role => role.name === "Newfag", "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag")) {
+            msg.member.roles.add(greenRole).catch(console.error);
             console.log('Someone is now part of the Green team!');
             msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
 
