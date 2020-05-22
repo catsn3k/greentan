@@ -79,34 +79,36 @@ bot.on('message', msg => {
   };
 
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
+    const blueTan = msg.guild.roles.cache.find(role => role.name === 'bluetan');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
+    let member = msg.member;
   
     // Command that sets up the Green role
     if (command === "green") {
-      member.roles.
-      if (msg.channel.id === '712502613022605322' || '390758129274454018') {
-        // Checks for insufficient permission
-        if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
-          let member = msg.member;
-          member.roles.add(greenRole).catch(console.error);
-          console.log('Someone is now part of the Green team!');
-          msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
-          
-        // When the member has the Green role already
-        } else if (msg.guild.roles.cache.has(greenRole)) {
-            msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
-        
-        // When the member has the Blue role already
-        } else if (msg.guild.roles.cache.has(blueRole)) {
-            msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
-        
-        // When the member has no role
-        } else {
-            msg.reply("it seems you can't use this command, try asking the Owner about the issue");
-            return;
-        }
-    // #bot-testing
+      if (member.roles.cache.has(newRole) {
+        if (msg.channel.id === '712502613022605322' || '390758129274454018') {
+          // Checks for insufficient permission
+          if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
+            member.roles.add(greenRole).catch(console.error);
+            console.log('Someone is now part of the Green team!');
+            msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
+
+          // When the member has the Green role already
+          } else if (msg.guild.roles.cache.has(greenRole)) {
+              msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
+
+          // When the member has the Blue role already
+          } else if (msg.guild.roles.cache.has(blueRole)) {
+              msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
+
+          // When the member has no role
+          } else {
+              msg.reply("it seems you can't use this command, try asking the Owner about the issue");
+              return;
+          }
+      // #bot-testing
+      } return;
     } return;
   };
 });
