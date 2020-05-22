@@ -84,6 +84,7 @@ bot.on('message', msg => {
   
     // Command that sets up the Green role
     if (command === "green") {
+      member.roles.
       if (msg.channel.id === '712502613022605322' || '390758129274454018') {
         // Checks for insufficient permission
         if (msg.guild.roles.cache.some(role => role.name === "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag", "Newfag")) {
