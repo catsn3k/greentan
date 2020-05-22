@@ -88,24 +88,24 @@ bot.on('message', (msg) => {
         if (msg.channel.id === '712502613022605322' || '390758129274454018') {
           // Checks for insufficient permission
           if (msg.member.roles.cache.some(role => role.name === "Newfag", "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag")) {
-            msg.m.roles.add(greenRole).catch(console.error);
+            msg.member.roles.add(greenRole).catch(console.error);
             msg.member.roles.remove(newRole).catch(console.error);
             console.log('Someone is now part of the Green team!');
             msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
-            msg.channel.bulkDelete({timeout: 5000}, 2);
+            msg.channel.bulkDelete(2);
 
           // When the member has the Green role already
           } else if (msg.guild.roles.cache.has(greenRole)) {
               msg.reply("hey numbnuts, you're already part of the Green team <:greendab:386360094104748033>");
-              msg.channel.bulkDelete({timeout: 5000}, 2);
+              msg.channel.bulkDelete(2);
           // When the member has the Blue role already
           } else if (msg.guild.roles.cache.has(blueRole)) {
               msg.reply("listen man, I wish you can be on our team, but you have to let the Owner know first");
-              msg.channel.bulkDelete({timeout: 5000}, 2);
+              msg.channel.bulkDelete(2);
           // When the member has no role
           } else {
               msg.reply("it seems you can't use this command, try asking the Owner about the issue");
-              msg.channel.bulkDelete({timeout: 5000}, 2);
+              msg.channel.bulkDelete(2);
               return;
           }
       // #bot-testing
