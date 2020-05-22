@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dotenv = require('dotenv');
+const { Permissions } = require('discord.js');
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ bot.on('ready', () => {
 const prefix = ".";
 
 // Defaults message => msg
-bot.on('guildMemberAdd', (member) => 'message', (msg) => {
+bot.on('message', (msg) => {
     
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
@@ -81,7 +82,8 @@ bot.on('guildMemberAdd', (member) => 'message', (msg) => {
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
-    const selfChannel = member.
+    const greenTan = msg.guild.roles.cache.find(role => role.name === 'greentan');
+    //const selfChannel = member.guild.channels.get('self-cahnnel', 'bot-testing');
   
     // Command that sets up the Green role
     if (command === "green") {
