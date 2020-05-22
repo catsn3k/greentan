@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dotenv = require('dotenv');
-const { Permissions } = require('discord.js');
 
 dotenv.config();
 
@@ -82,7 +81,6 @@ bot.on('message', (msg) => {
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
-    const greenTan = msg.guild.roles.cache.find(role => role.name === 'greentan');
     //const selfChannel = member.guild.channels.get('self-cahnnel', 'bot-testing');
   
     // Command that sets up the Green role
@@ -91,8 +89,10 @@ bot.on('message', (msg) => {
           // Checks for insufficient permission
           if (msg.member.roles.cache.some(role => role.name === "Newfag", "Owner", "Admin", "Mod", "Dev", "Server Host", "Oldfag")) {
             msg.member.roles.add(greenRole).catch(console.error);
+            msg.member.roles.remove(newRole).catch(console.error);
             console.log('Someone is now part of the Green team!');
             msg.reply('you are now part of the Green team!  Welcome aboard soldier! <:kkonagreen:387280493256900618>');
+            
 
           // When the member has the Green role already
           } else if (msg.guild.roles.cache.has(greenRole)) {
