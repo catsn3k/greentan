@@ -69,14 +69,14 @@ bot.on('message', (msg) => {
     // Command for posting random greentan memes
     if (command === "meme") {
       if (msg.member.roles.cache.some(role => role.name === 'Green')) {
-      var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
-      msg.channel.send({embed: {
-        image: {
-        url: randMeme
-        }
-      }});
-    } return;
-  };
+        var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
+        msg.channel.send({embed: {
+          image: {
+          url: randMeme
+          }
+        }});
+      } return;
+    };
 
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
