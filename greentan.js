@@ -68,11 +68,11 @@ bot.on('message', (msg) => {
   
     // Command for posting random greentan memes
     if (command === "meme") {
-      if (msg.guild.roles.cache.some(role => role.name === 'Green')) {
+      if (msg.member.roles.cache.some(role => role.name === 'Green')) {
       var randMeme = greenMemes[Math.floor(Math.random() * greenMemes.length)];
       msg.channel.send({embed: {
         image: {
-        url : randMeme
+        url: randMeme
         }
       }});
     } return;
