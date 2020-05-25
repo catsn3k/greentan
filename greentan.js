@@ -81,7 +81,6 @@ bot.on('message', (msg) => {
     const blueRole = msg.guild.roles.cache.find(role => role.name === 'Blue');
     const newRole = msg.guild.roles.cache.find(role => role.name === 'Newfag');
     const greenRole = msg.guild.roles.cache.find(role => role.name === 'Green');
-    //const selfChannel = member.guild.channels.get('self-cahnnel', 'bot-testing');
   
     // Command that sets up the Green role
     if (command === "green") {
