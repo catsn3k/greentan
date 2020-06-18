@@ -28,5 +28,6 @@ However, if the member wants to change their team bias, they will need to contac
 
 ----------------------------------------------------------------------
 
+ **/!\\** ___This bot contains very explicit and offensive content, please take this into consideration as it does not show or reflect the creator's true personality or belief's and is purely made for fun___ **/!\\**
 
--Rockmaster
+### -*mis3r*
