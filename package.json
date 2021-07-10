@@ -1,0 +1,27 @@
+{
+  "name": "greentan",
+  "version": "1.0.0",
+  "description": "A dedicated role assigning Discord bot",
+  "main": "greentan.js",
+  "scripts": {
+    "start": "node greentan.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "WTFPL",
+  "keywords": [
+    "node",
+    "dotenv",
+    "express",
+    "ace of spades",
+    "greentan",
+    "discord",
+    "bot"
+  ]
+}
