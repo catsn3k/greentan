@@ -1,6 +1,6 @@
 greentan Discord bot - Green team rocks!
 --------------------------
-`greentan` is a server dedicated Discord bot that self assigns the role Green, `greentan` also posts memes related to the Green team
+`greentan` is a server dedicated Discord bot that self assigns the role Green, `greentan` also posts memes related to the Green team from Ace of Spades
 
 ----------------------------------------------------------------------
 Usability:
@@ -13,7 +13,7 @@ Usability:
 Background:
 --------------------------
 
-Members without the, "Newfag" role will **NOT** have access to the `#self-assign` channel
+Members without the "Newfag" role will **NOT** have access to the `#self-assign` channel
 
 However, if a member wants to change their team role, they will need to contact the owner via **PM or @ mentioning**
 
